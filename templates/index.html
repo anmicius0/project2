@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<div id="app" class="container center">
+
+
+            <span v-if='haveProfile == true'>
+                <div class="row">
+                    <button id="submit-profile" v-on:click="resotre_profile" class="btn btn-primary">Continue as <span v-text="user_profile.displayname"></span> </button>
+                </div>
+
+                <p>or</p>
+                
+                <form v-on:submit="set_profile">
+                    <div>
+                        <div class="form-group row">
+                            <label class="col-form-label">Display name</label>
+                                <input class="form-control" id="form-displayname" type="text">
+                        </div>
+                        
+                        <div class="row">
+                            <button id="submit-noprofile" class="btn btn-primary"> Start </button>
+                        </div>
+                    </div>
+                </form>               
+            </span>
+
+
+            <span v-if='haveProfile == false'>
+                <form v-on:submit.prevent="set_profile">
+                    <div class="form-group row">
+                        <label class="col-form-label">Display name</label>
+                        <input class="form-control" id="form-displayname" type="text" v-model="user_profile.displayname">
+                    </div>
+                    
+                    <div class="row">
+                        <button id="submit-noprofile" class="btn btn-primary"> Enter as <span v-text="user_profile.displayname"> <span> </button>
+                    </div>
+                
+                </form>
+            </span>
+
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "layout.html" %} 
+
+{% block main%}
+<div id="app">
+    
+  <h1>Room: {{ room_name }}</h1>
+
+  <br>
+  <br>
+
+  <ul id="chat_list"></ul>
+
+  <form v-on:submit.prevent="submit_chat">
+    <input id="chat_text" type="text">
+    <button class="btn btn-primary">Send</button>
+  </form>
+
+</div>
+{% endblock %}

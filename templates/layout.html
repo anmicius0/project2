@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<head>
+    {% block head %}{% endblock %}
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script> <!-- Vue -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> <!-- Bootstrap -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> <!-- Bootstrap.js -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js"></script> <!-- socketio -->
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='debug.css') }}"> -->
+</head>
+<body>
+    {% block main %}
+    {% endblock %}
+</body>
